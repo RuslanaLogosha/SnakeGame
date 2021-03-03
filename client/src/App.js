@@ -7,8 +7,9 @@ import RatingView from './views/RatingView';
 function App() {
 	return (
 		<>
-			<Header />
 			<Router>
+				<Header />
+
 				<Switch>
 					<Route exact path="/" component={StartView} />
 					<Route path="/rating" component={RatingView} />

@@ -1,5 +1,10 @@
 import React from 'react';
+import { Title } from '../components/Title';
 
 export default function RatingView() {
-	return <div></div>;
+	return (
+		<div>
+			<Title>Champions' rating</Title>
+		</div>
+	);
 }
