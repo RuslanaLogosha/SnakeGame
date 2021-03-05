@@ -2,6 +2,7 @@ import React from 'react';
 import { Title } from '../components/Title';
 import { useState, useEffect } from 'react';
 import api from '../services/ratingService';
+import s from '../styles/transactionHistory.module.scss';
 
 export default function RatingView() {
   const [ratings, setRatings] = useState([]);
@@ -26,7 +27,7 @@ export default function RatingView() {
       <Title>Champions' rating</Title>
 
       {ratings.length > 0 ? (
-        <table>
+        <table className={s.transactionHistory}>
           <thead>
             <tr>
               <th>Name</th>

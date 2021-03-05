@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import s from './form.module.css';
+import s from '../styles/form.module.scss';
 
 export default function Form({ onSubmit, onClose }) {
   const [name, setName] = useState('');

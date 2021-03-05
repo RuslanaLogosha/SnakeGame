@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import shortid from 'shortid';
 import Form from './Form';
-import s from './form.module.css';
+import s from '../styles/form.module.scss';
 
 const modalRoot = document.querySelector('#modal-root');
 
