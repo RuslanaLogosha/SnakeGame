@@ -32,6 +32,7 @@ export default function RatingView() {
       .then(response => {
         setRatings({ ratings: response.data });
         console.log(response.data);
+        console.log(ratings);
       })
       .catch(error => {
         console.log(error);
