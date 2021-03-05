@@ -2,7 +2,7 @@ import React from 'react';
 import { Title } from '../components/Title';
 import { useState, useEffect } from 'react';
 import api from '../services/ratingService';
-import s from '../styles/transactionHistory.module.scss';
+import s from '../styles/ratingsTable.module.scss';
 
 export default function RatingView() {
   const [ratings, setRatings] = useState([]);
@@ -23,11 +23,11 @@ export default function RatingView() {
   }, []);
 
   return (
-    <div>
+    <div className={s.ratingsBackdrop}>
       <Title>Champions' rating</Title>
 
       {ratings.length > 0 ? (
-        <table className={s.transactionHistory}>
+        <table className={s.ratingsTable}>
           <thead>
             <tr>
               <th>Name</th>
