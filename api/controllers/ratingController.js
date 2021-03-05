@@ -2,14 +2,15 @@ const User = require('../model/users');
 
 const getAllRatings = async (_req, res, next) => {
   try {
-    const contacts = await User.getAllRatings();
-    return res.json({
-      status: 'success',
-      code: 200,
-      data: {
-        contacts,
-      },
-    });
+    const ratings = await User.getAllRatings();
+    return res.json(ratings);
+    //   ({
+    //   status: 'success',
+    //   code: 200,
+    //   data: {
+    //     ratings,
+    //   },
+    // });
   } catch (e) {
     next(e);
   }
@@ -17,13 +18,13 @@ const getAllRatings = async (_req, res, next) => {
 
 const getRatingByUserId = async (req, res, next) => {
   try {
-    const contact = await User.getRatingByUserId(req.params.id);
-    if (contact) {
+    const userRating = await User.getRatingByUserId(req.params.id);
+    if (userRating) {
       return res.json({
         status: 'success',
         code: 200,
         data: {
-          contact,
+          userRating,
         },
       });
     } else {
@@ -41,12 +42,12 @@ const getRatingByUserId = async (req, res, next) => {
 const createUsersRating = async (req, res, next) => {
   try {
     console.log(req.body);
-    const contact = await User.createUsersRating(req.body);
+    const userRating = await User.createUsersRating(req.body);
     return res.status(201).json({
       status: 'success',
       code: 201,
       data: {
-        contact,
+        userRating,
       },
     });
   } catch (e) {
@@ -57,13 +58,13 @@ const createUsersRating = async (req, res, next) => {
 const updateUserRating = async (req, res, next) => {
   try {
     console.log(req.body);
-    const contact = await User.updateUserRating(req.params.id, req.body);
-    if (contact) {
+    const userRating = await User.updateUserRating(req.params.id, req.body);
+    if (userRating) {
       return res.json({
         status: 'success',
         code: 200,
         data: {
-          contact,
+          userRating,
         },
       });
     } else {
