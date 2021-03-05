@@ -19,7 +19,6 @@ axios.defaults.baseURL = 'http://localhost:5000/api/ratings/';
 async function fetchRatings() {
   try {
     const ratings = await axios();
-    console.log(ratings);
     return ratings;
   } catch (error) {
     new Error('No response from server');
