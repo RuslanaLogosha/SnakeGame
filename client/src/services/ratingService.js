@@ -1,8 +1,3 @@
-// export async function getAllRatings() {
-//   const response = await fetch('/api/api/ratings');
-//   return await response.json();
-// }
-
 // export async function createUser(data) {
 //   const response = await fetch(`/api/api/ratings`, {
 //     method: 'POST',
@@ -25,6 +20,24 @@ async function fetchRatings() {
   }
 }
 
-const api = { fetchRatings };
+async function createRatings(body) {
+  const { name, id, score } = body;
+  try {
+    const ratings = await axios({
+      method: 'post',
+      url: 'http://localhost:5000/api/ratings/',
+      data: {
+        name,
+        id,
+        score,
+      },
+    });
+    return ratings;
+  } catch (error) {
+    new Error('No response from server');
+  }
+}
+
+const api = { fetchRatings, createRatings };
 
 export default api;
